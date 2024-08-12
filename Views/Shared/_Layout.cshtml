@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Layout</title>
+        <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js" integrity="sha512-2kq/RiHEhMKQN7FOPzMjmOxTlnNknhIgG9e1bbh/XzXi8+3TArxtNzg4xfmnRyQNPpLxibguHw3B1abasiscaw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="~/js/hub.js" type="text/javascript" defer></script>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <ul class="nav-list">
+                    <li class="nav-listElement">
+                        <a href="/aukciok" class="nav-ref">Aukciók</a>
+                    </li>
+                    <li class="nav-listElement">
+                        <a href="/ujarveres" class="nav-ref">Aukcióra bocsátás</a>
+                    </li>              
+                </ul>
+            </div>  
+            <div class="second">
+                <ul class="nav-list">
+                @if (!User.Identity.IsAuthenticated) {
+                    <li class="nav-listElement">
+                        <a href="/fiok/bejelentkezes" class="nav-ref">Bejelentkezés</a>
+                    </li>
+                    <li class="nav-listElement">
+                        <a href="/fiok/regisztracio" class="nav-ref">Regisztráció</a>
+                    </li>
+                }
+                else {
+                    <li class="nav-listElement">
+                        <a href="/fiok/kijelentkezes" class="nav-ref">Kijelentkezek</a>
+                    </li>
+                }
+                </ul>
+            </div>
+        </nav>     
+        @RenderBody()   
+    </body>
+</html>

@@ -1,0 +1,27 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string? emailError = TempData["emailError"] as string;
+    string? pwError = TempData["pwError"] as string;
+}
+
+<form action="/fiok/bejelentkezes" method="post" class="account-form">
+    <h1 class="form-info">Bejelentkezés</h1>
+    <div class="input-container">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="input">
+        @if(!string.IsNullOrEmpty(emailError)) {
+            <span class="form-span">@emailError</span>
+        }
+    </div>
+    <div class="input-container">
+        <label for="jelszo">Jelszó</label>
+        <input type="password" name="jelszó" id="jelszó" class="input">
+        @if(!string.IsNullOrEmpty(pwError)) {
+            <span class="form-span">@pwError</span>
+        }
+    </div>
+    <div class="input-container">
+        <button type="submit" class="btn">Bejelentkezezek</button>
+        <a href="/fiok/regisztracio" class="reg-ref">Még nem regisztráltam</a>
+    </div>
+</form>

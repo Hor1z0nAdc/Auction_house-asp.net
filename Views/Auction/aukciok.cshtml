@@ -1,0 +1,35 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/visszaszamol.js" defer></script>
+
+<section class="auction-section">
+@foreach (var árverés in ViewData["árverések"] as List<Auction_house.Árverés>)
+{
+  <section class="auction-item-section">
+    <div class="item-image-container">
+      <img src="~/images/@árverés.kép" alt="kép" class="item-img">
+    </div>
+      <h2 class="auction-item-data name name-data">@árverés.név</h2>
+    <div>
+      <div class="data">
+        <span class="auction-item-data">Határidő: </span>
+        <span class="auction-item-data határidő"></span>
+      </div>
+      <div class="data">
+        <span class="auction-item-data">Kikiáltási ár: </span>
+        <span class="auction-item-data" id="aktuális-ár @árverés.id">@árverés.kikiáltási_ár</span>
+        <span class="auction-item-data"> €</span>
+      </div>
+      <div>
+        <span class="auction-item-price">Aktuális ár: </span>
+        <span class="auction-item-price" id="aktuális-ár @árverés.id">@árverés.aktuális_ár</span>
+        <span class="auction-item-price"> €</span>
+      </div>
+      <div class="btn-container2"> 
+        <a href="/licit/@árverés.id" class="btn item-btn">Érdekel</a>
+      </div>
+    </div>
+  </section>
+}
+</section>

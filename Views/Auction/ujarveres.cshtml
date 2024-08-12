@@ -1,0 +1,40 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string? névError = TempData["névError"] as string;
+    string? árError = TempData["árError"] as string;
+    string? leírásError = TempData["leírásError"] as string;
+    string? képError = TempData["képError"] as string;
+}
+
+<form action="" method="post" enctype="multipart/form-data" class="upload-section">
+    <h1 class="form-info2">Feltöltés</h1>
+    <div class="input-container">
+        <label for="név">Név</label>
+        <input type="text" name="név" id="input2" class="név-input">
+        @if(!string.IsNullOrEmpty(névError)) {
+            <span class="form-span">@névError</span>
+        }
+    </div>
+    <div class="input-container">
+        <label for="ár">Kikiáltási ár</label>
+        <input type="text" name="ár" id="input2">
+        @if(!string.IsNullOrEmpty(árError)) {
+            <span class="form-span">@árError</span>
+        }
+    </div>
+    <div class="input-container">
+        <label for="kép">Kép</label>
+        <input type="file" accept=".png, .jpg, .jpeg" name="kép" id="kép">
+        @if(!string.IsNullOrEmpty(képError)) {
+            <span class="form-span">@képError</span>
+        }
+    </div>
+    <h3 class="textarea-span">Leírás</h3>
+    <textarea name="leírás" id="leírás" cols="45" rows="10"></textarea>
+    @if(!string.IsNullOrEmpty(leírásError)) {
+            <span class="form-span">@leírásError</span>
+    }
+    <div class="btn-container">
+        <button type="submit" class="btn">Feltöltés</button>
+    </div>
+</form>

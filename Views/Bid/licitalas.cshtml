@@ -1,0 +1,57 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Int64 numOfBids = (Int64)ViewData["numOfBids"];
+    Auction_house.Árverés item = ViewData["item"] as Auction_house.Árverés;
+}
+<script src="~/js/licit.js" defer></script>
+<script src="~/js/visszaszamol.js" defer></script>
+
+<section class="item-section">
+        <form action="/licit/@item.id" method="post" class="licit-container" id="licit-form">
+            <section>
+                <div class="licitItem-image-container">
+                    <img src="~/images/@item.kép" class="item-img" alt="item-img">
+                </div>
+                <h2 class="name">@item.név</h2>
+            </section>
+            <section class="licit-input-container">
+                <div class="input-container2">
+                    <span class="licit-span2">Kikiáltási ár:</span>
+                    <span class="licit-span2" id="kikiáltási-ár">@item.kikiáltási_ár</span>
+                    <span class="licit-span2"> €</span>
+                </div>
+                <div class="input-container2">
+                    <span class="licit-span2">Licitek száma:</span>
+                    <span class="licit-span2" id="bids">@numOfBids</span>
+                </div>
+                <div class="input-container2">
+                    <span class="licit-span">Lezárásik hátralevő idő: </span>
+                    <span class="licit-span határidő"></span>
+                </div>
+                <div class="input-container2">
+                    <span class="licit-span">Aktuális ár: </span>
+                    <span class="licit-span" id="aktuális-ár">@item.aktuális_ár</span>
+                    <span class="licit-span"> €</span>
+                </div>
+                <div class="input-container2 possibly-over">
+                    <label for="ajánlat" class="licit-span">Az ön árajánlata</label>
+                    <input type="text" name="ajánlat" id="ajánlat" class="ajánlat-input">
+                    <span class="licit-span">€</span>
+                </div>
+                <div class="input-container2 possibly-over">
+                    <button class="licit-btn" id="licit-btn">Licitálok</button>
+                </div>
+            </section>
+            <div class="hidden-data">
+                <input type="text" name="numOfBids" id="numOfBidsForm" value=@numOfBids>
+                <input type="text" name="aktuális_ár" id="aktuális_árForm" value=@item.aktuális_ár>
+                <input type="text" name="kikiáltási_ár" id="kikiáltási_árForm" value=@item.kikiáltási_ár>
+                <input type="text" name="itemId" id="itemIdForm" value=@item.id>
+                <input type="text" name="győztes" id="győztes" value=@item.győztes>
+            </div>
+        </form>  
+     <section>
+         <h2>Leírás</h2>
+         <p class="leiras-p">@item.leírás</p>
+     </section>
+</section>

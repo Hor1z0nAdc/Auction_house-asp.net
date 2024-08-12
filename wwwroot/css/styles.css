@@ -1,0 +1,299 @@
+body{
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--font-color);
+}
+
+nav {
+    background-color: white;
+    display: flex;
+}
+
+.second {
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.nav-list {
+    display: flex;
+    text-transform: uppercase;
+}
+
+.nav-listElement {
+    margin-left: 20px;
+}
+
+.nav-ref:hover {
+    color: orange
+}
+
+.reg-ref {
+    margin-left: 30px;
+    font-weight: bolder;
+}
+
+.reg-ref:hover {
+    color: orange
+}
+
+a {
+    color: var(--font-color);
+    text-decoration: none;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.account-form {
+    background-color: white;
+    border-radius: 12px;
+    width: 33%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.input-container {
+    margin: 30px;
+}
+
+.input-container2 {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+label {
+    margin-right: 10px;
+    font-size: large;
+}
+
+.label-form {
+    margin-left: 32px;
+}
+
+.input {
+    width: 230px;
+    border: 2px solid #7fa8eb;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    font-size: medium;
+}
+
+.input2 {
+    font-size: larger;
+    color: blue;
+}
+
+.form-span {
+    color: var(--error-color);
+    display: block;
+}
+
+.form-info {
+    font-weight: normal;
+    text-align: center;
+}
+
+.form-info2 {
+    font-weight: normal;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn {
+    background-color: var(--font-color);
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--btn-color);
+    transition: all 0.2s ease;
+}
+
+.item-btn {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.licit-btn {
+    background-color: var(--font-color);
+    border-radius: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: larger;
+    color: var(--btn-color);
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: black;
+    transform: translateY(-2px);
+}
+
+.licit-btn:hover {
+    cursor: pointer;
+    background-color: black;
+    transform: translateY(-2px);
+}
+
+.checkbox {
+    margin-left: 20px;
+}
+
+.data {
+    margin-bottom: 8px;
+}
+
+.name-data {
+    margin-bottom: 18px;
+}
+
+.auction-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 90%;
+    margin-left: 127px;
+    margin-top: 20px;
+    padding-bottom: 25px;
+}
+
+.auction-item-section {
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+.auction-item-section:hover {
+    background-color: var(--item-bgColor);
+}
+
+.auction-item-data {
+    font-size: large;
+    font-weight: normal;
+}
+
+.auction-item-price {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.item-image-container {
+    width: 300px;
+    height: 300px;
+}
+
+.item-img {
+    width: 100%;
+    height: 100%;
+}
+
+.upload-section {
+    width: 50%;
+    background-color: white;
+    border-radius: 15px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+textarea {
+    resize: none;
+    font-size: large;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.name {
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.textarea-span {
+    font-size: large;
+    font-weight: normal;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.név-input {
+    margin-left: 57px;
+}
+
+.btn-container {
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.btn-container2 {
+    margin-top: 30px;
+}
+
+.item-section {
+    background-color: white;
+    border-radius: 15px;
+    width: 70%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 30px;
+}
+
+.licit-container {
+    display: flex;
+}
+
+
+.licitItem-image-container {
+    width: 450px;
+    height: 450px;
+}
+
+.licit-input-container {
+    margin-left: 30px;
+}
+
+.licit-span {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.licit-span2 {
+    font-size: larger;
+}
+
+.leiras-p {
+    font-size: large;
+}
+
+.ajánlat-input {
+    width: 120px;
+    font-size: large;
+}
+
+.hidden-data {
+    display: none;
+}
+
+.over {
+    display: none;
+}
+
+:root {
+    --item-bgColor:#fff8c7;
+    --bg-color: #f0f0f0;
+    --font-color: #383838;
+    --btn-color: #fafafa;
+    --error-color: #9c0f05;
+}

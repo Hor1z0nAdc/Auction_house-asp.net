@@ -1,0 +1,35 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string? pw1Error = TempData["pw1Error"] as string;
+    string? pw2Error = TempData["pw2Error"] as string;
+    string? email = TempData["email"] as string;
+    string? emailError = TempData["emailError"] as string;
+}
+
+<form action="/fiok/regisztracio" method="post" class="account-form">
+    <h1 class="form-info">Regisztráció</h1>
+    <div class="input-container">
+        <label for="email" class="label-form">Email</label>
+        <input type="email" value=@email name="email" id="email" class="input">
+         @if(!string.IsNullOrEmpty(emailError)) {
+            <span class="form-span">@emailError</span>
+        }
+    </div>
+    <div class="input-container">
+        <label for="jelszo1" class="label-form">Jelszó</label>
+        <input type="password" name="jelszó1" id="jelszó1" class="input">
+         @if(!string.IsNullOrEmpty(pw1Error)) {
+            <span class="form-span">@pw1Error</span>
+        }
+    </div>
+    <div class="input-container">
+        <label for="jelszo2">Jelszó újra</label>
+        <input type="password" name="jelszó2" id="jelszó2" class="input">
+         @if(!string.IsNullOrEmpty(pw2Error)) {
+            <span class="form-span">@pw2Error</span>
+        }
+    </div>
+    <div class="input-container">
+        <button type="submit" class="btn">Regisztrálok</button>
+    </div>
+</form>
